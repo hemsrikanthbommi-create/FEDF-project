@@ -52,7 +52,14 @@ export default function MeetingRoomPage() {
   const [isVideoEnabled, setIsVideoEnabled] = useState(true)
   const [isRecording, setIsRecording] = useState(false)
   const [participants, setParticipants] = useState<Participant[]>([])
-  const [currentUserId] = useState(() => `user-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`)
+const [currentUserId] = useState(() => {
+    const stored = localStorage.getItem('fedf-user-id');
+    if (stored) return stored;
+    
+    const newId = `user-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    localStorage.setItem('fedf-user-id', newId);
+    return newId;
+  })
 
   // Request camera permission with enhanced error handling and HD quality
   const requestCameraPermission = async () => {
@@ -60,8 +67,8 @@ export default function MeetingRoomPage() {
       setCameraPermission('prompt')
       
       const videoConstraints = {
-        width: { ideal: 1920, min: 1280 },
-        height: { ideal: 1080, min: 720 },
+        width: { ideal: 1280, min: 320 },
+        height: { ideal: 720, min: 240 },
         frameRate: { ideal: 30, min: 15 },
         facingMode: 'user'
       }
