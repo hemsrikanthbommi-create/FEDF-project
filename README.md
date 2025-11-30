@@ -259,6 +259,23 @@ Optimized configuration with:
 
 For support, join our [Discord community](https://discord.gg/NPv4zRHQqY).
 
+## 🚀 Current Deployment
+
+**Deployed by**: hemsrikanthbommi-create  
+**Deployment Date**: November 29, 2025  
+**Live URL**: https://dark-meet-khaki.vercel.app  
+**Status**: ✅ Production Ready
+
+### Deployment Infrastructure
+
+This project is now deployed with complete CI/CD automation:
+- GitHub Actions for automated testing and building
+- Vercel for serverless deployment
+- Full environment variable management
+- Comprehensive deployment documentation
+
+For deployment details, see `docs/DEPLOYMENT.md` and `QUICK_DEPLOY.md`.
+
 ---
 
 **Built with ❤️ by techy**
